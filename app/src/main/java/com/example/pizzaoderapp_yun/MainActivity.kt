@@ -30,7 +30,6 @@ class MainActivity : BaseActivity() {
         mainViewPager.adapter = mvpa
 
 //        탭에리아웃과 연결
-
         mainTabLayout.setupWithViewPager(mainViewPager)
     }
 
