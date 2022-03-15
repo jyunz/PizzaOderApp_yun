@@ -2,15 +2,18 @@ package com.example.pizzaoderapp_yun
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pizzaoderapp_yun.adapters.MainViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity() { 
+class MainActivity : BaseActivity() {
+
+    lateinit var mvpa : MainViewPagerAdapter
     
     override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-    setUpEvents()
-    setValues()
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        setUpEvents()
+        setValues()
 
 
 }
@@ -23,9 +26,12 @@ class MainActivity : BaseActivity() {
 
 //        뷰 페이저 작업
 
+        mvpa = MainViewPagerAdapter(supportFragmentManager)
+        mainViewPager.adapter = mvpa
+
 //        탭에리아웃과 연결
 
-//        mainTabLayout.setupWithViewPager()
+        mainTabLayout.setupWithViewPager(mainViewPager)
     }
 
    
