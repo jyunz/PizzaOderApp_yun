@@ -18,7 +18,7 @@ class PizzaStoreAdapter(
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var tempRow = convertView
         if (tempRow == null) {
-             tempRow = inflater.inflate(R.layout.fragment_pizza_store_list, null)
+            tempRow = inflater.inflate(R.layout.pizza_store_list_item, null)
         }
 
         val row = tempRow!!
