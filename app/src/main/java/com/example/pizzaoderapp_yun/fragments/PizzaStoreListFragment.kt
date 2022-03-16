@@ -40,5 +40,7 @@ class PizzaStoreListFragment : Fragment() {
 
         pizzaStoreListView.adapter = mPizzaStoreAdapter
 
+//        3월 16일
+
     }
 }
