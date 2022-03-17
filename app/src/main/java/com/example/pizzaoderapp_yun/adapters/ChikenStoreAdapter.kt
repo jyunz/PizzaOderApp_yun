@@ -39,6 +39,7 @@ class ChikenStoreAdapter(
 
         chikenStoreNameTxt.text = data.name
 
+//        mContext를 만드는 이유 중 하나
         Glide.with(mContext).load(data.logoURL).into(chikenLogoImg)
 
 
