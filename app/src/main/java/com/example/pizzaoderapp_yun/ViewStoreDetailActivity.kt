@@ -1,5 +1,7 @@
 package com.example.pizzaoderapp_yun
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.example.pizzaoderapp_yun.datas.Store
@@ -17,6 +19,13 @@ class ViewStoreDetailActivity : BaseActivity() {
 
     }
     override fun setUpEvents() {
+
+        callPhoneBtn.setOnClickListener {
+
+            val myUri = Uri.parse("tel: ${mStoreData.phoneNum}")
+            val myIntent = Intent(Intent.ACTION_CALL,myUri)
+            startActivity(myIntent)
+        }
     }
 
     override fun setValues() {
