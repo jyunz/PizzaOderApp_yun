@@ -1,11 +1,13 @@
 package com.example.pizzaoderapp_yun.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.pizzaoderapp_yun.R
+import com.example.pizzaoderapp_yun.ViewStoreDetailActivity
 import com.example.pizzaoderapp_yun.adapters.ChikenStoreAdapter
 import com.example.pizzaoderapp_yun.adapters.PizzaStoreAdapter
 import com.example.pizzaoderapp_yun.datas.Store
@@ -39,5 +41,17 @@ class chikenStoreListFragment : Fragment() {
         mChikenStoreAdapter = ChikenStoreAdapter(requireContext(), R.layout.chiken_store_list_item,mChikenStoreDataList)
 
         chikenStoreListView.adapter = mChikenStoreAdapter
+
+        chikenStoreListView.setOnItemClickListener { parent, view, position, id ->
+
+            val clickedStore = mChikenStoreDataList[position]
+
+            val myIntent = Intent(requireContext(),ViewStoreDetailActivity::class.java)
+
+            myIntent.putExtra("storeData", clickedStore)
+
+            startActivity(myIntent)
+
+        }
     }
 }

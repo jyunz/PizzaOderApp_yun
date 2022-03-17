@@ -10,6 +10,7 @@ import com.example.pizzaoderapp_yun.datas.Store
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.normal.TedPermission
 import kotlinx.android.synthetic.main.activity_view_store_detail.*
+import kotlinx.android.synthetic.main.chiken_store_list_item.*
 
 class ViewStoreDetailActivity : BaseActivity() {
 
@@ -20,8 +21,8 @@ class ViewStoreDetailActivity : BaseActivity() {
         setContentView(R.layout.activity_view_store_detail)
         setUpEvents()
         setValues()
-
     }
+
     override fun setUpEvents() {
 
         callPhoneBtn.setOnClickListener {
@@ -55,6 +56,7 @@ class ViewStoreDetailActivity : BaseActivity() {
 
         storePhoneNumTxt.text = mStoreData.phoneNum
         storeNameTxt.text = mStoreData.name
+
 
     }
 
